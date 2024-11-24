@@ -10,3 +10,7 @@ let valueInNumber = Number(marks)
 // "33abc" => NaN
 //true => 1; false =>0
 
+let isLoggedIn = "Omkar"
+
+let booleanIsLogggedIn= Boolean(isLoggedIn)
+console.log(booleanIsLogggedIn)
