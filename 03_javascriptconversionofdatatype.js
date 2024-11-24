@@ -13,4 +13,14 @@ let valueInNumber = Number(marks)
 let isLoggedIn = "Omkar"
 
 let booleanIsLogggedIn= Boolean(isLoggedIn)
-console.log(booleanIsLogggedIn)
+//console.log(booleanIsLogggedIn)
+
+//1 => true; 0=> false
+//" "=> false
+//"Omkar" => true 
+
+let smallnumber =56
+
+let stringNumber = String(smallnumber)
+console.log(stringNumber);
+console.log (typeof stringNumber);
