@@ -39,28 +39,10 @@ Ans :-  a. var
 4) What is Hoisting ?
 Ans :- Hoisting is a behaviour where variable and function declarations are moved to the top of their scope before execution . 
 
-Example input code :
-
-console.log(hoistedVar); // Output: undefined
-var hoistedVar = 10;
-
-console.log(hoistedLet); // Error: Cannot access 'hoistedLet' before initialization
-let hoistedLet = 20;
-
 5) Explain the types of variable scope ?
 Ans :- a. Function scope :- 
 Variables declared using var inside a function are function-scoped.
 These variables are accessible only within the function where they are declared.
-
-For example :-
-Input code :
-   function functionScopeExample() {
-  var functionVar = "I am function-scoped";
-  console.log(functionVar); // Output: I am function-scoped
-}
-
-// console.log(functionVar); // Error: functionVar is not defined
-functionScopeExample();
 
 Notes:
 Variables declared with var are not accessible outside their parent function.
@@ -70,18 +52,6 @@ b.  Global Scope :-
 A variable declared outside of any function or block has a global scope.
 Global variables are accessible from anywhere in the code, including inside functions and blocks.
 
-For example :- 
-Input code :
-// Global Scope
-let globalVar = "I am global";
-
-function accessGlobal() {
-  console.log(globalVar); // Output: I am global
-}
-
-accessGlobal();
-console.log(globalVar); // Output: I am global
-
 Notes:
 Avoid excessive use of global variables to prevent naming conflicts.
 
@@ -90,35 +60,45 @@ c.  Block Scope
 Variables declared using let or const are block-scoped.
 These variables are accessible only within the block {} where they are defined.
 
-For example :- 
-Input code :-
-function blockScopeExample() {
-  if (true) {
-    let blockVar = "I am block-scoped";
-    const anotherBlockVar = "I am also block-scoped";
-    console.log(blockVar); // Output: I am block-scoped
-    console.log(anotherBlockVar); // Output: I am also block-scoped
-  }
-  // console.log(blockVar); // Error: blockVar is not defined
-  // console.log(anotherBlockVar); // Error: anotherBlockVar is not defined
-}
-
-blockScopeExample();
-
 d. Lexical (Nested) Scope
 JavaScript supports lexical scoping, meaning a function can access variables declared in its parent scope.
 Inner functions can access variables declared in outer functions.
 
-For example:- 
-Input code :-
-function outerFunction() {
-  let outerVar = "I am from the outer scope";
+e. Module Scope
+Variables declared inside a module (e.g., using ES6 import/export) are scoped to that module.
+These variables are not accessible globally.
 
-  function innerFunction() {
-    console.log(outerVar); // Output: I am from the outer scope
-  }
+Notes:
+Module scope is enforced in ES6 modules.
 
-  innerFunction();
-}
+f. Hoisting and Scope 
+* Hoisting in Function Scope (var)
+Variables declared with var are hoisted and initialized to undefined.
+* Hoisting in Block Scope (let and const)
+Variables declared with let and const are hoisted but remain uninitialized until their declaration is encountered.
 
-outerFunction();
+
+6) Data types for variables
+Variables can store different types of data :
+   1. Number: let x = 5;
+   2. String: let name = "Alice";
+   3. Boolean: let isTrue = true;
+   4. Object: let obj = { key: "value" };
+   5. Array: let arr = [1, 2, 3];
+   6. Function: let greet = function() { return "Hello"; };
+
+7) Important point :
+Best Practices
+a)Use let and const:
+1.Use const for values that won't change.
+2.Use let for values that may change.
+3.Avoid using var.
+
+b)Descriptive Names:
+Use meaningful variable names like userName or isLoggedIn.
+
+c)Avoid Global Variables:
+Limit variables to their necessary scope to avoid conflicts.
+
+d)Initialize Variables:
+Always initialize variables when declaring them.
