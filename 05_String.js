@@ -31,6 +31,7 @@ const OtherString = gameName.slice(4 , -2)
 console.log( OtherString);
 //Here the output will be r S Ghanekar according to the indexing of slicing given by us 
 
-
-
+const newString1 ="Omkar Ghanekar"
+console.log (newString1);
+console.log (newString1.trim());
 
